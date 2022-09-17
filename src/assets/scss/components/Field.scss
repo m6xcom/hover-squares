@@ -1,6 +1,7 @@
 .field{
   display: flex;
   flex-direction: column;
+  box-sizing: content-box;
   width: 330px;
   border: 1px solid #000;
 
@@ -30,5 +31,6 @@
   }
   .field-item{
     height: 0;
+    box-sizing: content-box;
   }
 }
