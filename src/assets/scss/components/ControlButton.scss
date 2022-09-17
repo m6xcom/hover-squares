@@ -1,0 +1,15 @@
+.control-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: blue;
+    text-transform: uppercase;
+    color: #fff;
+
+    &--red{
+        background-color: red;
+    }
+}

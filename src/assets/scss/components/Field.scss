@@ -1,0 +1,34 @@
+.field{
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  border: 1px solid #000;
+
+  &--small{
+    .field-item{
+      width: calc(100% / 5);
+      padding-bottom: calc(100% / 5);
+    }
+  }
+
+  &--medium{
+    .field-item{
+      width: calc(100% / 15);
+      padding-bottom: calc(100% / 15);
+    }
+  }
+
+  &--big{
+    .field-item{
+      width: calc(100% / 25);
+      padding-bottom: calc(100% / 25);
+    }
+  }
+  &__row{
+    display: flex;
+    width: 100%;
+  }
+  .field-item{
+    height: 0;
+  }
+}
