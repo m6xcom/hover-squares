@@ -14,6 +14,10 @@ function App() {
       setHoveredSquares([]);
   }, [isStarted])
 
+  useEffect(()=>{
+      setIsStarted(false);
+  },[mode])
+
   return (
     <div className="app">
         <div className="app__header">
