@@ -26,8 +26,7 @@ export function FieldItem({col , row , state , setHoveredSquares, hoveredSquares
     }, [state])
 
     return (
-        <div data-col={col}
-             data-row={row}
+        <div
              onMouseOver={changeColor}
              className={`field-item ${color === 'blue' ? 'field-item--blue' : ''}`}>
         </div>
