@@ -1,14 +1,14 @@
 import React from 'react'
 import '../assets/scss/components/ControlButton.scss'
 
-export function ControlButton({ changeState, state }){
+export function ControlButton({ changeState, state , select }){
     const toggleGame = ()=>{
-        const select = document.getElementsByClassName('select')[0];
-        const selectValue = select.value;
+        const selectEl = select.current;
+        const selectValue = selectEl.value;
         if (selectValue){
             changeState(!state);
         }else{
-            select.classList.add('select--error');
+            selectEl.classList.add('select--error');
         }
     }
     return (

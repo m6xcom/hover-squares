@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import {Select} from "./Select";
 import {ControlButton} from "./ControlButton";
 import {Field} from "./Field";
@@ -9,6 +9,7 @@ function App() {
   const [mode, changeMode] = useState(5);
   const [isStarted , setIsStarted] = useState(false);
   const [hoveredSquares , setHoveredSquares] = useState([]);
+  const select = useRef(null);
 
   useEffect(()=>{
       setHoveredSquares([]);
@@ -21,8 +22,8 @@ function App() {
   return (
     <div className="app">
         <div className="app__header">
-            <Select changeMode={changeMode}/>
-            <ControlButton changeState={setIsStarted} state={isStarted}/>
+            <Select changeMode={changeMode} selectRef={select}/>
+            <ControlButton changeState={setIsStarted} state={isStarted} select={select}/>
         </div>
         <div className="app__body">
             <Field hoveredSquares={hoveredSquares} setHoveredSquares={setHoveredSquares} mode={Number(mode)} state={isStarted}/>
