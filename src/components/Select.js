@@ -4,6 +4,7 @@ import '../assets/scss/components/Select.scss'
 
 export function Select({changeMode, selectRef}){
     const [modes , setModes] = useState([]);
+
     const getAndSetModes = async()=>{
         try {
             const data = await fetchModes();
@@ -14,11 +15,11 @@ export function Select({changeMode, selectRef}){
     }
 
     const selectChange = (e)=>{
-        const selectEl = selectRef.current;
+        const selectEl = e.currentTarget;
         if (selectEl.value && selectEl.classList.contains("select--error")){
             selectEl.classList.remove('select--error');
         }
-        changeMode(e.currentTarget.value);
+        changeMode(selectEl.value);
     }
     useEffect(()=>{
         getAndSetModes();
