@@ -8,7 +8,7 @@ export function HoveredList({hoveredSquares}){
             <span className='hovered-list__title'>Hover squares</span>
             <ul className="hovered-list__list">
                 {hoveredSquares.map((el)=>{
-                    return <HoveredListItem col={el.col} row={el.row}/>
+                    return <HoveredListItem col={el.col} row={el.row} key={`${el.col}${el.row}-item`}/>
                 })}
             </ul>
         </div>
