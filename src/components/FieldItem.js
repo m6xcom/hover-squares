@@ -6,18 +6,15 @@ export function FieldItem({col , row , state , setHoveredSquares, hoveredSquares
 
     const changeColor = ()=>{
         if (state){
+            let newHoveredSquaresArr
             if (color === 'white'){
                 setColor('blue');
-                const sortedArr = [...hoveredSquares, {col, row}].sort((x, y)=> x.row - y.row || x.col - y.col);
-                setHoveredSquares(sortedArr)
+                newHoveredSquaresArr = [...hoveredSquares, { id:`${row}${col}`, row, col}].sort((x, y)=> x.row - y.row || x.col - y.col);
             }else{
                 setColor('white');
-                const filteredArr = hoveredSquares.filter((el)=>{
-                    const isUncoveredEl = el.col === col && el.row === row;
-                    return !isUncoveredEl;
-                });
-                setHoveredSquares(filteredArr);
+                newHoveredSquaresArr = hoveredSquares.filter((el)=>el.id !== `${row}${col}`);
             }
+            setHoveredSquares(newHoveredSquaresArr)
         }
     }
 
